@@ -1,0 +1,291 @@
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    /* Typography */
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: var(--font-size-2xl); }
+    h3 { font-size: var(--font-size-xl); }
+    
+    /* Hero Section */
+    .hero {
+        padding: var(--space-12) 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+        position: static;
+        min-height: auto;
+        margin-bottom: var(--space-6);
+    }
+    
+    .sidebar .nav-link {
+        padding: var(--space-3) var(--space-4);
+    }
+    
+    /* Dashboard */
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item {
+        padding: var(--space-4);
+    }
+    
+    /* Disease Grid */
+    .disease-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-4);
+    }
+    
+    /* Symptoms Grid */
+    .symptoms-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Navigation */
+    .navbar-collapse {
+        background: white;
+        padding: var(--space-4);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        margin-top: var(--space-3);
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* Spacing */
+    :root {
+        --space-4: 0.875rem;
+        --space-6: 1.25rem;
+        --space-8: 1.5rem;
+        --space-12: 2rem;
+        --space-16: 2.5rem;
+    }
+    
+    /* Typography */
+    h1 { font-size: var(--font-size-2xl); }
+    h2 { font-size: var(--font-size-xl); }
+    h3 { font-size: var(--font-size-lg); }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Cards */
+    .card-body {
+        padding: var(--space-4);
+    }
+    
+    .card-header {
+        padding: var(--space-4);
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-lg {
+        padding: var(--space-4) var(--space-6);
+        font-size: var(--font-size-base);
+    }
+    
+    /* Tables */
+    .table-responsive {
+        font-size: var(--font-size-sm);
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: var(--space-3);
+    }
+    
+    /* Forms */
+    .form-control {
+        padding: var(--space-3);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Disease Grid */
+    .disease-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .disease-card {
+        padding: var(--space-4);
+    }
+    
+    /* Feature Cards */
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Modal */
+    .modal-dialog {
+        margin: var(--space-4);
+    }
+    
+    .modal-content {
+        border-radius: var(--radius);
+    }
+    
+    /* Back to Top */
+    .back-to-top {
+        bottom: var(--space-4);
+        right: var(--space-4);
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    /* Hero Section */
+    .hero {
+        padding: var(--space-8) 0;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    /* Navigation */
+    .navbar-brand {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Stats */
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    /* Disease Icons */
+    .disease-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    /* Feature Icons */
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    /* Forms */
+    .form-row {
+        margin-left: -var(--space-2);
+        margin-right: -var(--space-2);
+    }
+    
+    .form-row > .col,
+    .form-row > [class*="col-"] {
+        padding-left: var(--space-2);
+        padding-right: var(--space-2);
+    }
+    
+    /* Print adjustments */
+    @media print {
+        .container {
+            max-width: 100% !important;
+        }
+        
+        .col-print-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dark: #f8f9fa;
+        --light: #2d3748;
+        --gray-light: #4a5568;
+    }
+    
+    body {
+        background: #1a202c;
+        color: var(--dark);
+    }
+    
+    .card {
+        background: #2d3748;
+        color: var(--dark);
+    }
+    
+    .form-control {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: var(--dark);
+    }
+    
+    .table {
+        color: var(--dark);
+    }
+    
+    .table thead th {
+        background: var(--primary);
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: #0066cc;
+        --primary-dark: #004499;
+    }
+    
+    .btn {
+        border: 2px solid transparent;
+    }
+    
+    .card {
+        border: 2px solid var(--gray-light);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .btn:hover,
+    .card:hover {
+        transform: none;
+    }
+}

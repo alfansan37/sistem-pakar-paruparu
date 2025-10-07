@@ -1,0 +1,32 @@
+/db_pakar_paru/
+├── index.php
+├── koneksi.php
+├── login.php
+├── register.php
+├── proses/
+│   ├── login_proses.php
+│   ├── register_proses.php
+│   ├── diagnosa_proses.php
+│   └── crud_proses.php
+├── admin/
+│   ├── dashboard.php
+│   ├── penyakit.php
+│   ├── gejala.php
+│   ├── basis_pengetahuan.php
+│   ├── riwayat.php
+│   └── cetak_laporan.php
+├── user/
+│   ├── dashboard.php
+│   ├── konsultasi.php
+│   ├── hasil_diagnosa.php
+│   ├── riwayat.php
+│   └── cetak_hasil.php
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── bootstrap/
+│       ├── css/
+│       └── js/
+└── logout.php
