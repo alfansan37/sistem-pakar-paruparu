@@ -1,0 +1,2 @@
+atau ketik ini di terminal
+composer require tecnickcom/tcpdf
