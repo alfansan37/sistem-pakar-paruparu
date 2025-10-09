@@ -15,6 +15,270 @@ if (!is_logged_in() || !is_admin()) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<style>
+/* Modern Dashboard CSS - Hijau & Oranye Theme */
+:root {
+  --primary-green: #2e7d32;
+  --primary-green-light: #4caf50;
+  --primary-green-dark: #1b5e20;
+  --accent-orange: #ff9800;
+  --accent-orange-light: #ffb74d;
+  --accent-orange-dark: #f57c00;
+  --neutral-light: #f8f9fa;
+  --neutral-medium: #e9ecef;
+  --neutral-dark: #343a40;
+  --text-dark: #212529;
+  --text-light: #6c757d;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar.bg-primary {
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark)) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand i {
+  color: var(--accent-orange-light);
+}
+
+.navbar-text {
+  font-weight: 500;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: var(--transition);
+  border-radius: 6px;
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background: linear-gradient(to bottom, var(--primary-green), var(--primary-green-dark)) !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 56px);
+  padding-top: 1.5rem;
+}
+
+.nav.flex-column .nav-item {
+  margin-bottom: 0.5rem;
+}
+
+.nav.flex-column .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  padding: 0.75rem 1rem !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.nav.flex-column .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(5px);
+}
+
+.nav.flex-column .nav-link.active {
+  background-color: var(--accent-orange);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav.flex-column .nav-link i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Main Content Styling */
+main {
+  padding-top: 1.5rem !important;
+}
+
+h2.h3 {
+  color: var(--primary-green-dark);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--accent-orange);
+  display: inline-block;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card.bg-primary {
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light)) !important;
+}
+
+.card.bg-success {
+  background: linear-gradient(135deg, var(--primary-green-light), #66bb6a) !important;
+}
+
+.card.bg-warning {
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light)) !important;
+}
+
+.card.bg-info {
+  background: linear-gradient(135deg, #29b6f6, #4fc3f7) !important;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.card .fa-2x {
+  opacity: 0.8;
+}
+
+/* Table Styling */
+.table-responsive {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead {
+  background: linear-gradient(to right, var(--primary-green), var(--primary-green-light));
+  color: white;
+}
+
+.table thead th {
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(46, 125, 50, 0.05);
+}
+
+.table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+/* Card Header Styling */
+.card-header {
+  background: white;
+  border-bottom: 1px solid var(--neutral-medium);
+  padding: 1.25rem 1.5rem;
+}
+
+.card-header .card-title {
+  color: var(--primary-green-dark);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    min-height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .table-responsive {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for cards on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+</style>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">

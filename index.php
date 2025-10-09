@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Beranda</a>
+                        <a class="nav-link" href="index.php">Beranda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#tentang">Tentang</a>
@@ -89,7 +89,7 @@
                         <p class="lead mb-5">Dapatkan analisis awal kondisi kesehatan paru-paru Anda berdasarkan gejala yang dialami. Sistem kami menggunakan metode Forward Chaining untuk memberikan diagnosa yang akurat.</p>
                         <div class="d-flex flex-wrap gap-3">
                             <?php if (!is_logged_in()): ?>
-                                <a href="register.php" class="btn btn-primary btn-lg">
+                                <a href="login.php" class="btn btn-primary btn-lg">
                                     <i class="fas fa-stethoscope me-2"></i>Mulai Konsultasi
                                 </a>
                             <?php else: ?>
