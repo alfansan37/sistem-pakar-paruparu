@@ -166,7 +166,7 @@ $gejala_result = mysqli_query($koneksi, $gejala_query);
 
                             <div class="form-actions mt-5">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="dashboard.php" class="btn btn-outline-secondary">
+                                    <a href="dashboard.php" class="btn btn-outline-primary btn-lg">
                                         <i class="fas fa-arrow-left me-2"></i>Kembali
                                     </a>
                                     <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" disabled>

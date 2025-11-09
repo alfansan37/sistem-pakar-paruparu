@@ -171,7 +171,7 @@ $riwayat_result = mysqli_query($koneksi, $riwayat_query);
                     <div class="card-body">
                         <div class="row text-center">
                             <div class="col-md-6 mb-3">
-                                <a href="konsultasi.php" class="btn btn-primary btn-lg w-100 py-3">
+                                <a href="konsultasi.php" class="btn btn-primary btn-lg text-white w-100 py-3">
                                     <i class="fas fa-stethoscope fa-2x mb-2"></i><br>
                                     Mulai Konsultasi
                                 </a>
@@ -229,7 +229,7 @@ $riwayat_result = mysqli_query($koneksi, $riwayat_query);
                                 <i class="fas fa-file-medical fa-4x text-muted mb-3"></i>
                                 <h5 class="text-muted">Belum ada riwayat diagnosa</h5>
                                 <p class="text-muted">Mulai konsultasi pertama Anda untuk melihat hasil diagnosa</p>
-                                <a href="konsultasi.php" class="btn btn-primary">Mulai Konsultasi</a>
+                                <a href="konsultasi.php" class="btn btn-primary text-white">Mulai Konsultasi</a>
                             </div>
                         <?php endif; ?>
                     </div>
