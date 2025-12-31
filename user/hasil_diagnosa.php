@@ -40,7 +40,21 @@ if (isset($_GET['id'])) {
     $id_hasil = $_SESSION['id_hasil'];
     $diagnosa = $hasil_diagnosa[0]; // Ambil hasil utama
     
-    // Ambil gejala dari session atau query
+    // Untuk hasil baru, ambil data lengkap dari database
+    $query = "SELECT h.*, p.nama_penyakit, p.deskripsi, p.solusi 
+              FROM hasil_diagnosa h 
+              JOIN penyakit p ON h.id_penyakit = p.id_penyakit 
+              WHERE h.id_hasil = '$id_hasil'";
+    $result = mysqli_query($koneksi, $query);
+    
+    if (mysqli_num_rows($result) == 1) {
+        $diagnosa = mysqli_fetch_assoc($result);
+    } else {
+        $_SESSION['error'] = "Data diagnosa tidak ditemukan!";
+        redirect('konsultasi.php');
+    }
+    
+    // Ambil gejala dari database (jangan dari session)
     $gejala_query = mysqli_query($koneksi, 
         "SELECT gejala_terpilih FROM hasil_diagnosa WHERE id_hasil = '$id_hasil'");
     $gejala_data = mysqli_fetch_assoc($gejala_query);
